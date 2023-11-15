@@ -1,0 +1,25 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "Hi this is my first time using React ",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kunaaaaaaaaalll/React.git"
+  },
+  "keywords": [
+    "react",
+    "namaste",
+    "react",
+    "dev"
+  ],
+  "author": "Kunal Soni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kunaaaaaaaaalll/React/issues"
+  },
+  "homepage": "https://github.com/kunaaaaaaaaalll/React#readme"
+}
