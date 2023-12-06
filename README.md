@@ -20,3 +20,22 @@
 
 # Package.json
 - Scripts will make our npx parcel index.html command to quite less "start": "parcel index.html"
+
+# Healthy Diet !
+/*
+* Header
+    - Nav Bar
+    - Logo
+    - Home Button
+* Body
+    - Search
+    - Restaurant Container
+        - Restaurant Cards
+            - Img
+            - Name of Res, Star Rating, Cuisine etc.
+* Footer
+    - Copy Write
+    - Links
+    - License
+    - Address
+*/

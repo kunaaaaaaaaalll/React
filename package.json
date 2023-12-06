@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Hi this is my first time using React ",
   "scripts": {
-    "chalu-karo": "parcel index.html",
+    "karo": "parcel index.html",
     "prod-build": "parcel build index.html",
     "test": "jest"
   },

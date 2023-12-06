@@ -1,3 +1,70 @@
-#heading {
-    color: dodgerblue;
+.app {
+font-family: sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: lightgrey;
+    border-radius: 65px;
+}
+
+.logo {
+    width: 90px; 
+    border-radius: 50px;   
+}
+
+.logo-container {
+    width: 90px;
+    margin: 10px;
+}
+
+.nav-items {
+    margin: 10px;
+    padding-right: 20px;
+}
+
+.nav-items > ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-items > ul > li {
+    padding: 10px;
+    margin: 10px;
+}
+
+.search {
+    padding: 10px;
+}
+
+.res-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.res-card {
+    margin: 5px;
+    width: 20em;
+}
+
+.image {
+    width: 10em;
+    padding-left: 5em;
+}
+
+.filter {
+    border-radius: 10px;
+}
+
+.filter:hover {
+    border:solid;
+    cursor: pointer;
+    background-color: grey;
+    text-decoration: aliceblue;
+}
+
+.res-card:hover {
+    border: 1px solid black;
+    cursor: pointer;
 }

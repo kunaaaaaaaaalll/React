@@ -3,11 +3,15 @@ import ReactDOM  from "react-dom/client";
 
 const heading = React.createElement('h1', {id: 'heading'}, 'Hello World from React!');
 
-const nestedDOM = React.createElement('div', {id: 'parent'},
-React.createElement('div', {id: 'child'},[
-React.createElement('h1', {}, "i'm in a nested tags"), React.createElement('h2', {}, "i'm in a h2 tag")]));
-    // if(heading.props.id === 'heading')
-    //     heading.props.children = 'i updated the DOM';
-    console.log(nestedDOM);
+// JSX => (JSX converts into BABEL)
+const jsxHeading = <h1 id="heading">Hello JSX</h1>;
+
+// Functional Components
+
+const HeadingComponent = () => (<h1 id = "heading">First Functional Component using BABEL</h1>);
+
+console.log("ReactElement", heading);
+console.log("JSX", jsxHeading);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(nestedDOM);
+root.render(<HeadingComponent/>); // syntax which babel understands... 
