@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import {useEffect, useState} from "react";
 import { SWIGGY_DATA } from "../utils/common";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
     /* This is React Super Variable where useState() is maintaining the state of the variable
@@ -20,8 +21,8 @@ const Body = () => {
         const data = await fetch(SWIGGY_DATA);
         const json = await data.json();
         // Optional Chaining...
-        setListOfRestaurant(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFilteredRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setListOfRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
 
     // Conditional Rendering...
@@ -48,7 +49,7 @@ const Body = () => {
             </div>
             <div className = "res-container">
                 {
-                    filteredRestaurants.map((restaurant) => (<RestaurantCard key={restaurant?.info?.id} resData = {restaurant?.info}/>))
+                    filteredRestaurants.map((restaurant) => (<Link key={restaurant?.info?.id} to={"/restaurant/" + restaurant?.info?.id}><RestaurantCard key={restaurant?.info?.id} resData = {restaurant?.info}/></Link>))
                 }
             </div>
         </div>
