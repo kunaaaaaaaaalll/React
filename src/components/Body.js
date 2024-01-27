@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import { SWIGGY_DATA } from "../utils/common";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
     /* This is React Super Variable where useState() is maintaining the state of the variable
@@ -29,6 +30,20 @@ const Body = () => {
     /* if(listOfRestaurants.length === 0) {
          return <Shimmer/>
     }*/
+
+    const connStatus = useOnlineStatus();
+    if(connStatus === false)
+        return (
+            <div className="toast-container">
+                <div className="toast">
+                    <div>
+                        <div className="toast-title">Oh No !!</div>
+                        <div className="toast-message">You are currently offline.</div>
+                    </div>
+                    <button className="toast-close">&times;</button>
+                </div>
+            </div>
+        );
 
     return listOfRestaurants.length ? (
         <div className = "body">

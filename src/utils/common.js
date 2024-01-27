@@ -5,3 +5,5 @@ export const LOGO_URL = "https://imgs.search.brave.com/1FuXICyr7iOZorQJNDgJAFmjC
 export const SWIGGY_DATA = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"; 
 
 export const SWIGGY_MENU_DATA = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=";
+
+export const GITHUB_GETUSERS = "https://api.github.com/users/kunaaaaaaaaalll";
