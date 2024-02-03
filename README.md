@@ -39,3 +39,7 @@
     - License
     - Address
 */
+
+# Tailwindcss postcssrc
+    - We are manually created file .postcssrc file and tell postcss to use tailwindcss.
+    - postcss used by parcel to undestand tailwindcss.
