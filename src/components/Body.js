@@ -46,23 +46,24 @@ const Body = () => {
         );
 
     return listOfRestaurants.length ? (
-        <div className = "body">
-            <div className = "search">
-                <input type = "text" className = "search-cards" value = {searchText} onChange={(e) => setSearchText(e.target.value)}/>
-                <button onClick={() => {
+        <div className = "p-0 m-0 box-border">
+            <div className = "flex justify-center items-center ml-1">
+                <input type = "text" className = "border border-gray-300 px-3 rounded-md focus:outline-none focus:border-blue-500"
+                 value = {searchText} onChange={(e) => setSearchText(e.target.value)}/>
+                <button className="m-1 bg-blue-600 text-gray-50 px-2 hover:rounded-lg hover:shadow-lg" onClick={() => {
                     console.log(searchText);
                     const searchedList = listOfRestaurants.filter((restaurant) => (restaurant.info.name.toLowerCase().includes(searchText.toLowerCase())));
                     setFilteredRestaurants(searchedList);
                 }}> Search
                 </button>
-                <button className="filter" onClick={() => {
+                <button className="m-1" onClick={() => {
                     const filterList = listOfRestaurants.filter((restaurant) => restaurant?.info?.avgRating > 4)
                     // React uses Reconciliation and Diff Algorithm when setListOfRestaurant func.
                     setFilteredRestaurants(filterList);
                 }}>Rating 4.0+
                 </button>
             </div>
-            <div className = "res-container">
+            <div className = "flex flex-wrap justify-evenly">
                 {
                     filteredRestaurants.map((restaurant) => (<Link key={restaurant?.info?.id} to={"/restaurant/" + restaurant?.info?.id}><RestaurantCard key={restaurant?.info?.id} resData = {restaurant?.info}/></Link>))
                 }
