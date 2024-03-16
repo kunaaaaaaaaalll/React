@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
 import {useEffect, useState} from "react";
 import { SWIGGY_DATA } from "../utils/common";
 import Shimmer from "./Shimmer";
@@ -22,6 +22,7 @@ const Body = () => {
         const data = await fetch(SWIGGY_DATA);
         const json = await data.json();
         // Optional Chaining...
+        console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setListOfRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
@@ -45,6 +46,8 @@ const Body = () => {
             </div>
         );
 
+        // it is just creating a enhanched version of RestaurantCard...
+        const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
     return listOfRestaurants.length ? (
         <div className = "p-0 m-0 box-border">
             <div className = "flex justify-center items-center ml-1">
@@ -65,7 +68,14 @@ const Body = () => {
             </div>
             <div className = "flex flex-wrap justify-evenly">
                 {
-                    filteredRestaurants.map((restaurant) => (<Link key={restaurant?.info?.id} to={"/restaurant/" + restaurant?.info?.id}><RestaurantCard key={restaurant?.info?.id} resData = {restaurant?.info}/></Link>))
+                    filteredRestaurants.map((restaurant) => (
+                    <Link key={restaurant?.info?.id} to={"/restaurant/" + restaurant?.info?.id}>
+                        {console.log(restaurant?.info, restaurant?.info?.isOpen)}
+                        {restaurant?.info?.isOpen
+                        ? (<RestaurantCardPromoted {...restaurant?.info}/>)
+                        : (<RestaurantCard resData = {restaurant?.info}/>)}
+                    </Link>
+                    ))
                 }
             </div>
         </div>

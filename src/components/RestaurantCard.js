@@ -16,4 +16,21 @@ const RestaurantCard = (props) => {
     );
 }
 
+// Higher Order function for putting a label on a Restaurant Card...
+
+// Input RestaurantCard => promotedRestaurantCard...
+
+export const withPromotedLabel = (RestaurantCard) => {
+    // It is a component...
+    return (props) => {
+        // a component is a fnc returns a piece of jsx...
+        return(
+            <div>
+                <label>Open</label>
+                <RestaurantCard resData = {props}/>
+            </div>
+        );
+    }
+};
+
 export default RestaurantCard;

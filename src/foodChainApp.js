@@ -1,4 +1,4 @@
-import React, {lazy, Suspense} from "react";
+import React, {lazy, Suspense, useEffect, useState} from "react";
 import ReactDOM  from "react-dom/client";
 import HeaderComponent from "./components/HeaderComponent";
 import Body from "./components/Body";
@@ -8,14 +8,31 @@ import ContactUs from "./components/ContactUs";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Loader from "./components/Loader";
+import UserContext from "./utils/UserContext";
+import appStore from "./utils/appStore";
 // import Grocery from "./components/Grocery";
 
+
 const AppLayout = () => {
+    const [userName, setUserName] = useState();
+
+    useEffect(() => {
+        const data = {
+            name: 'Kunal Soni'
+        };
+        setUserName(data.name);
+    }, []);
+
     return (
-        <div className = "app">
-            <HeaderComponent />
-            <Outlet />
-        </div>
+        // Provider Given By React-redux works as a Bridge Between appStore to application...
+        <Provider store={appStore}>
+            <UserContext.Provider value={{loggedInUser} = userName ?? 'Kunal Soni'} >
+                <div className = "app">
+                    <HeaderComponent />
+                    <Outlet />
+                </div>
+            </UserContext.Provider>
+        </Provider>
     );
 }
 

@@ -7,3 +7,5 @@ export const SWIGGY_DATA = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=
 export const SWIGGY_MENU_DATA = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=";
 
 export const GITHUB_GETUSERS = "https://api.github.com/users/kunaaaaaaaaalll";
+
+export const RESTAURANT_CATEGORY = "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory";

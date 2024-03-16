@@ -43,3 +43,11 @@
 # Tailwindcss postcssrc
     - We are manually created file .postcssrc file and tell postcss to use tailwindcss.
     - postcss used by parcel to undestand tailwindcss.
+
+# Redux Toolkit
+    - Install 2 packages for using Redux with React
+        1. @reduxjs/toolkit
+        2. react-redux
+    
+    - Vanilla Redux < Redux Toolkit (RTK)
+    - react-redux has Provider to complete the bridge between appStore to our Application...
